@@ -1,0 +1,119 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.user {
+  background-image: url('../assets/images/user_background.jpeg');
+  height: 150px;
+  background-size: cover;
+}
+
+.user_avatar {
+  float: right;
+  height: 80px;
+  width: 80px;
+  background-color: gray;
+  border-radius: 50%;
+
+}
+
+
+.card_logo {
+  float: left;
+  height: 80px;
+  width: 80px;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.card_initial {
+  font-size: 60px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bolder;
+  z-index: 99999;
+  position: absolute;
+  text-align: center !important;
+  height: 80px;
+  width: 80px;
+  padding-top: 5px;
+}
+
+.card_name {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: black;
+}
+
+.share {
+  color: #32db64;
+  content: '<ion-icon name="share"></ion-icon>';
+}
+
+.card_number {
+  font-size: smaller;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  word-break: break-word;
+
+}
+
+.hydrated {
+  word-wrap: initial;
+
+}
+
+.user_name {
+  font-size: 130%;
+  color: white;
+  background-color: #222222;
+  padding: 10px;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+
+button.alert-button:nth-child(1) {
+
+}
+
+button.alert-button:nth-child(2) {
+  font-weight: bold;
+  color: green;
+}
+
+button.alert-button:nth-child(3) {
+  font-weight: bold;
+  color: orangered;
+
+}
+
+button.alert-button-group {
+  width: 33.33%;
+}
+
+.alert-button-group-vertical {
+  flex-direction: row;
+}
+

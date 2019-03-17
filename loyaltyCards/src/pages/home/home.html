@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Cards</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let c of cards; let i = index" class="sc-ion-card-ios-h sc-ion-card-ios-s hydrated"
+            (click)="share_or_delete(c)">
+    <ion-card-header class="hydrated">
+      <ion-card-title role="heading" aria-level="2" class="hydrated">
+        <div>
+          <div class="card_logo"><span class="card_initial">{{c.card_name[0]}}</span><img
+            src="../../assets/images/default_card.png" height="80"></div>
+          <div text-wrap class="card_name item-text-wrap"> {{c.card_name}}</div>
+          <div text-wrap class="card_number item-text-wrap">{{c.card_number}}</div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+  <ion-fab right bottom>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button (click)="camera_add()" ion-fab>
+        <ion-icon name="barcode"></ion-icon>
+      </button>
+      <button (click)="add()" ion-fab>
+        <ion-icon name="add"></ion-icon>
+      </button>
+
+    </ion-fab-list>
+  </ion-fab>
+  <br/><br/>
+</ion-content>

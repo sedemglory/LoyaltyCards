@@ -1,0 +1,7 @@
+{
+  "name": "loyaltyCards",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
