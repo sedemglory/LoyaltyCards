@@ -5,7 +5,7 @@
       <ion-title>Loyalty Cards</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content [ngClass]="dark ? 'background_theme': ''">
 
     <ion-grid>
       <ion-row class="user">
@@ -18,7 +18,9 @@
       <!--<button menuClose ion-item *ngIf="!isLoggedIn" (click)="login()">-->
       <!--<ion-icon name="log-in"></ion-icon> Login-->
       <!--</button>-->
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{ p.title }}</button>
+      <button [ngClass]="dark ? 'card_theme': ''" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.title"></ion-icon>
+        {{ p.title | uppercase}}</button>
       <!--<button menuClose ion-item  (click)="events()">-->
       <!--<ion-icon name="calendar"></ion-icon> Events-->
       <!--</button>-->

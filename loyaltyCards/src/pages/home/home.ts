@@ -12,18 +12,27 @@ import {Toast} from '@ionic-native/toast';
 export class HomePage {
   public cards: any = [];
   public searchCards: any = [];
+  dark: boolean;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private nativeStorage: NativeStorage,
               public platform: Platform, private barcodeScanner: BarcodeScanner, private socialSharing: SocialSharing,
               private toast: Toast) {
     platform.ready().then(() => {
-      this.cards.push({'card_name': 'Makro', 'card_number': 116812351});
+      this.nativeStorage.getItem('dark_theme')
+        .then(
+          data => {
+            this.dark = data;
+            // alert(this.dark);
+          },
+          error => alert(error)
+        );
+      // this.cards.push({'card_name': 'Makro', 'card_number': 116812351});
       this.load();
     });
   }
 
   public add() {
-    const prompt = this.alertCtrl.create({
+    let prompt = this.alertCtrl.create({
       title: 'Add a Loyalty Card',
       message: "Enter in the card information",
       inputs: [
@@ -47,7 +56,13 @@ export class HomePage {
           text: 'Add',
           handler: data => {
             console.log(data);
+            // alert(JSON.stringify(data));
             if (data['card_name'] != "" || data['card_number'] != "") {
+              for (let c in this.cards) {
+                if (c['card_name'] == data.card_name) {
+                  this.show_message('Error', "Cards cannot have the same name. \nPlease choose a different name.");
+                }
+              }
               this.cards.push(data);
               this.nativeStorage.setItem('my_cards', this.cards)
                 .then(
@@ -70,6 +85,7 @@ export class HomePage {
     const prompt = this.alertCtrl.create({
       title: 'Add a Loyalty Card',
       message: "Enter in the card information",
+      cssClass: this.dark == true ? 'dark' : '',
       inputs: [
         {
           name: 'card_name',
@@ -112,7 +128,7 @@ export class HomePage {
   }
 
   show_message(status, msg) {
-    const alert = this.alertCtrl.create({
+    let alert = this.alertCtrl.create({
       title: status,
       subTitle: msg,
       buttons: ['OK']

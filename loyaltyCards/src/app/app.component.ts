@@ -1,9 +1,10 @@
 import {Component, ViewChild} from '@angular/core';
-import {Nav, Platform} from 'ionic-angular';
+import {Events, Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HomePage} from '../pages/home/home';
-
+import {SettingsPage} from '../pages/settings/settings';
+import {NativeStorage} from "@ionic-native/native-storage";
 
 @Component({
   templateUrl: 'app.html'
@@ -12,18 +13,31 @@ export class LoyaltyCards {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-
+  dark: boolean;
   pages: Array<{ title: string, component: any }>;
   avatar = "";
   name = 'Guest';
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public nativeStorage: NativeStorage, public events: Events) {
     this.initializeApp();
     this.avatar = "assets/images/user_avatar.svg";
+    events.subscribe('theme:changed', (theme) => {
+      this.dark = theme;
+    });
+    this.nativeStorage.getItem('dark_theme')
+      .then(
+        data => {
+          this.dark = data;
+          // alert(this.dark);
+        },
+        error => alert(error)
+      );
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: 'Home', component: HomePage},
+      {title: 'home', component: HomePage},
+      {title: 'settings', component: SettingsPage},
     ];
+
   }
 
   initializeApp() {

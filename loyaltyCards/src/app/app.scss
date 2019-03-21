@@ -62,8 +62,35 @@
   color: red;
 }
 
+.background_theme {
+  background-color: #424242;
+}
+
+.card_theme {
+  background-color: #E0E0E0;
+}
+
+.top {
+  background-color: #212121;
+}
+
+.dark {
+  background-color: dimgrey !important;
+  $alert-wp-background: dimgrey;
+}
+
+//
+//.alert_wrapper {
+//  background-color: dimgrey;
+//}
+
 .blue {
   color: black;
+}
+
+.pad {
+  padding: 10px;
+  text-align: justify;
 }
 
 .share {

@@ -8,7 +8,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding [ngClass]="{'background_theme': dark}">
   <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
@@ -18,7 +18,8 @@
       refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-  <ion-card *ngFor="let c of cards; let i = index" class="sc-ion-card-ios-h sc-ion-card-ios-s hydrated"
+  <ion-card [ngClass]="{'card_theme': dark}" *ngFor="let c of cards; let i = index"
+            class="sc-ion-card-ios-h sc-ion-card-ios-s hydrated"
             (click)="share_or_delete(c)">
     <ion-card-header class="hydrated">
       <ion-card-title role="heading" aria-level="2" class="hydrated">
