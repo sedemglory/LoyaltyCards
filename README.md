@@ -6,6 +6,12 @@ This app does not have any warranty or guarantee. No security mechanisms have be
 sensitive information like credit/debit cards. This app was simply created to keep all your loyalty cards in one app instead of carrying 
 them around with you everywhere you go. 
 
+## Requirements
+    NodeJS  
+    Android SDK
+    Java 
+    
+
 ## Installation
 
 APK file [`LoyaltyCards.apk`](https://github.com/AvinashSingh786/LoyaltyCards/releases/download/1.0/LoyaltyCardsv1.apk)
@@ -13,23 +19,24 @@ APK file [`LoyaltyCards.apk`](https://github.com/AvinashSingh786/LoyaltyCards/re
 Run the following commands to get working
 - `git@github.com:AvinashSingh786/LoyaltyCards.git`
 - `cd LoyaltyCards`
+- `npm install -g ionic cordova angular`
 - `npm install`
-- `ionic cordova run android`
+- `ionic cordova run android` -- This may take a few minutes to run
 
 ## System (Environment)
 
-####Ionic:
+Ionic:
 
     ionic (Ionic CLI)  : 4.12.0
     Ionic Framework    : ionic-angular 3.9.3
     @ionic/app-scripts : 3.2.1
 
-####Cordova:
+Cordova:
 
     cordova (Cordova CLI) : 8.1.2 (cordova-lib@8.1.1)
     Cordova Platforms     : android 7.1.4, browser 5.0.4
 
-####System:
+System:
 
     Android SDK Tools : 26.1.1 
     NodeJS            : v8.9.1 
@@ -49,7 +56,7 @@ Run the following commands to get working
  
   - Bug reports.
   - Feedback.
-  - Features.
+  - Feature Requests.
 
 
 ## License
