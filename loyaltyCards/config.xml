@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets">
   <name>Loyalty Cards</name>
   <description>Keeping all your loyalty cards in one place</description>
-  <author email="hi@ionicframework" href="https://avinashsingh786.github.io/">Avinash Singh</author>
+  <author email="tashan.avi@gmail.com" href="https://avinashsingh786.github.io/">Avinash Singh</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
