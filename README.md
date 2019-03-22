@@ -1,4 +1,4 @@
-<img src="https://github.com/AvinashSingh786/LoyaltyCards/raw/master/loyaltyCards/resources/icon.png" height="50" width="50"/><h1>Loyalty Cards</h1>
+<img src="https://avinashsingh786.github.io/images/LoyaltyCard.png" height="50" width="50"/><h1>Loyalty Cards</h1>
 An open source hybrid mobile app to store all your loyalty cards in one place :)
 This is an ionic application and is specifically designed for Android and the apk is available 
 under the repos releases. If you do not trust the apk you can generate your own and you can develop on the source as well.
